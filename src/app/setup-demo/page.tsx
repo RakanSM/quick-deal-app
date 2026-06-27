@@ -28,7 +28,7 @@ export default function SetupDemoPage() {
       const { data: signData, error: signErr } = await auth.auth.signUp({ email, password });
       if (signErr) throw signErr;
       const userCredential = signData;
-      const uid = userCredential.user.id;
+      const uid = userCredential?.user?.id ?? "";
       await db.from('staff_profiles').upsert({
         uid, username, name: 'مدير النظام الرئيسي', email, role: 'admin', phone: '0500000000',
       });
