@@ -131,7 +131,7 @@ const translations = {
       title: 'لوحة الإدارة',
       applicants: 'الطلبات',
       analytics: 'الإحصاءات',
-      staff: 'فريق العمل',
+      staffLabel: 'فريق العمل',
       accessRequests: 'طلبات الوصول',
       settings: 'الإعدادات',
       login: {
@@ -310,7 +310,7 @@ const translations = {
       title: 'Admin Dashboard',
       applicants: 'Applications',
       analytics: 'Analytics',
-      staff: 'Staff',
+      staffLabel: 'Staff',
       accessRequests: 'Access Requests',
       settings: 'Settings',
       login: {
