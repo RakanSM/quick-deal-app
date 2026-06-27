@@ -72,7 +72,7 @@ export default function ApplyPage() {
         submissionDate: new Date().toISOString(),
         comments: [],
       });
-      if (insertErr) throw insertErr;
+      if (ie) throw ie;
       setStep(4);
     } catch (e: any) {
       toast({ variant: 'destructive', title: isAr ? 'خطأ' : 'Error', description: cleanError(e) });
