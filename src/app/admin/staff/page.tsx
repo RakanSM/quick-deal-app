@@ -162,7 +162,7 @@ export default function StaffPage() {
                     )}
                   </div>
 
-                  {isAdmin && member.uid !== user?.uid && (
+                  {isAdmin && member.id !== user?.id && (
                     <div className="flex gap-2 mt-4 pt-3 border-t border-border">
                       <Button size="sm" variant="outline" onClick={() => openEdit(member)}
                         className="flex-1 h-8 rounded-lg text-xs gap-1.5">
