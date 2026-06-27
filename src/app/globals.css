@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* QD Brand — Navy + Gold */
+  --background: 50 20% 98%;        /* #FAFAF8 cream */
+  --foreground: 215 74% 21%;       /* #0F2C5C navy */
+  --card: 0 0% 100%;
+  --card-foreground: 215 74% 21%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 74% 21%;
+  --primary: 215 74% 21%;          /* #0F2C5C */
+  --primary-foreground: 50 100% 97%;
+  --secondary: 215 40% 94%;
+  --secondary-foreground: 215 74% 21%;
+  --muted: 215 30% 95%;
+  --muted-foreground: 215 20% 50%;
+  --accent: 37 51% 60%;            /* #C9A86A gold */
+  --accent-foreground: 215 74% 15%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 215 30% 88%;
+  --input: 215 30% 88%;
+  --ring: 215 74% 21%;
+  --radius: 0.75rem;
+  --font-headline: 'Playfair Display', serif;
+  --font-body: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* RTL base */
+html[dir="rtl"] body {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+html[dir="ltr"] body {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-headline {
+  font-family: var(--font-headline), serif;
+}
+
+/* Gradient mesh background for hero sections */
+.bg-mesh {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(15,44,92,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(201,168,106,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 90%, rgba(15,44,92,0.05) 0%, transparent 60%),
+    hsl(var(--background));
+}
+
+/* Gold shimmer for premium elements */
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #C9A86A 0%,
+    #e8d5a3 40%,
+    #C9A86A 60%,
+    #b8975a 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-shimmer-animate {
+  animation: shimmer 3s infinite linear;
+}
+
+/* Navy gradient */
+.navy-gradient {
+  background: linear-gradient(135deg, #0F2C5C 0%, #1a4a8a 50%, #0F2C5C 100%);
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(15,44,92,0.18);
+}
+
+/* Glass card */
+.glass {
+  background: rgba(255,255,255,0.70);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.40);
+}
+
+/* Diagonal section separator */
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+/* Print styles */
+@media print {
+  .print\:hidden { display: none !important; }
+  body { background: white !important; }
+}
+
+/* Fade-up stagger animation utilities */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+
+/* Number stat pulse */
+@keyframes count-up {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.stat-number {
+  animation: count-up 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: hsl(var(--muted)); border-radius: 99px; }
+::-webkit-scrollbar-thumb { background: hsl(var(--primary) / 0.3); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.5); }
