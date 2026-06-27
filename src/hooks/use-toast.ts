@@ -23,7 +23,7 @@ export const reducer = (state: State, action: Action): State => {
       if (toastId) { addToRemoveQueue(toastId); } else { state.toasts.forEach((toast) => { addToRemoveQueue(toast.id); }); }
       return { ...state, toasts: state.toasts.map((t) => t.id === toastId || toastId === undefined ? { ...t, open: false } : t) };
     }
-    case "REMOVE_TOAST": return toastId === undefined ? { ...state, toasts: [] } : { ...state, toasts: state.toasts.filter((t) => t.id !== action.toastId) };
+    case "REMOVE_TOAST": return action.toastId === undefined ? { ...state, toasts: [] } : { ...state, toasts: state.toasts.filter((t) => t.id !== action.toastId) };
   }
 };
 const listeners: Array<(state: State) => void> = [];
