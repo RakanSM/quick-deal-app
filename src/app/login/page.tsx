@@ -134,8 +134,8 @@ export default function LoginPage() {
               <div className="text-center pt-2">
                 <p className="text-muted-foreground text-xs">
                   {lang === 'ar'
-                    ? 'هذه البوابة مخصصة لموظفي كويك ديل فقط'
-                    : 'This portal is for Quick Deal staff only'}
+                    ? 'سجّل دخولك لمتابعة حالة طلبك أو الدخول للوحة الإدارة'
+                    : 'Sign in to track your application status or access the admin dashboard'}
                 </p>
               </div>
             </div>
